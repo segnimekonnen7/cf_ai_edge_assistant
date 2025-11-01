@@ -1,0 +1,13 @@
+name = "cf-ai-edge-workflow"
+main = "../apps/workflows/src/index.ts"
+compatibility_date = "2024-10-15"
+account_id = "${CF_ACCOUNT_ID}"
+
+[durable_objects]
+bindings = [
+  { name = "MEMORY_DO", class_name = "SessionMemory", script_name = "cf-ai-edge-durable" }
+]
+
+[ai]
+binding = "WORKERS_AI"
+

@@ -1,0 +1,19 @@
+name = "cf-ai-edge-durable"
+main = "../apps/durable/src/index.ts"
+compatibility_date = "2024-10-15"
+account_id = "${CF_ACCOUNT_ID}"
+workers_dev = true
+
+[durable_objects]
+bindings = [
+  { name = "MEMORY_DO", class_name = "SessionMemory" }
+]
+
+[kv_namespaces]
+bindings = [
+  { binding = "CHAT_SUMMARIES", id = "${CHAT_SUMMARIES_NAMESPACE}" }
+]
+
+[ai]
+binding = "WORKERS_AI"
+

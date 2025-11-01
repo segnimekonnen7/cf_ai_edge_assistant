@@ -1,0 +1,22 @@
+name = "cf-ai-edge-assistant"
+account_id = "${CF_ACCOUNT_ID}"
+workers_dev = true
+
+[vars]
+MODEL_ID = "@cf/meta/llama-3.3-8b-instruct"
+
+[durable_objects]
+bindings = [
+  { name = "MEMORY_DO", class_name = "SessionMemory" }
+]
+
+[kv_namespaces]
+bindings = [
+  { binding = "CHAT_SUMMARIES", id = "${CHAT_SUMMARIES_NAMESPACE}" }
+]
+
+[workflows]
+bindings = [
+  { name = "CHAT_WORKFLOW", script_name = "cf-ai-edge-workflow" }
+]
+

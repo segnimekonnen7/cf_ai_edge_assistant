@@ -1,0 +1,20 @@
+{
+  "name": "@cf-ai/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "wrangler pages deploy dist --project-name=cf-ai-edge-assistant"
+  },
+  "dependencies": {
+    "nanoid": "5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "vite": "5.4.10"
+  }
+}
+

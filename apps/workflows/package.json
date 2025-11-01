@@ -1,0 +1,16 @@
+{
+  "name": "@cf-ai/workflows",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler workflows dev --config ../../infra/workflows.wrangler.toml",
+    "deploy": "wrangler workflows deploy --config ../../infra/workflows.wrangler.toml",
+    "test": "vitest --run"
+  },
+  "dependencies": {
+    "@cloudflare/workflows": "workspace:*",
+    "zod": "3.23.8"
+  }
+}
+

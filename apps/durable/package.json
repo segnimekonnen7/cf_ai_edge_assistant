@@ -1,0 +1,11 @@
+{
+  "name": "@cf-ai/durable",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --config ../../infra/durable.wrangler.toml",
+    "deploy": "wrangler deploy --config ../../infra/durable.wrangler.toml"
+  }
+}
+

@@ -1,0 +1,41 @@
+{
+  "name": "cf_ai_edge_assistant",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.12.2",
+  "workspaces": [
+    "apps/worker",
+    "apps/durable",
+    "apps/workflows",
+    "web"
+  ],
+  "scripts": {
+    "dev": "pnpm run dev:all",
+    "dev:worker": "pnpm --filter @cf-ai/worker dev",
+    "dev:web": "pnpm --filter @cf-ai/web dev",
+    "dev:workflows": "pnpm --filter @cf-ai/workflows dev",
+    "dev:all": "concurrently \"pnpm --filter @cf-ai/worker dev\" \"pnpm --filter @cf-ai/web dev\" \"pnpm --filter @cf-ai/workflows dev\"",
+    "test": "vitest",
+    "lint": "eslint .",
+    "deploy": "pnpm --filter @cf-ai/worker deploy && pnpm --filter @cf-ai/workflows deploy && pnpm --filter @cf-ai/web deploy",
+    "typecheck": "tsc --noEmit",
+    "loadtest": "node scripts/load.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20251014.0",
+    "@typescript-eslint/eslint-plugin": "8.10.0",
+    "@typescript-eslint/parser": "8.10.0",
+    "@types/node": "20.16.5",
+    "concurrently": "9.1.0",
+    "eslint": "9.10.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsdoc": "48.11.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "prettier": "3.3.3",
+    "typescript": "5.6.3",
+    "vitest": "4.0.6",
+    "wrangler": "3.79.0"
+  }
+}
+
